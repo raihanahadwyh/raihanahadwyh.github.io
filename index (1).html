@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raihanah Adawiyah Shaharuddin — Geospatial & Data Analyst</title>
+<meta name="description" content="Portfolio of Raihanah Adawiyah Shaharuddin — GIS, spatial analysis, and agent-based transportation modelling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2A3D;
+    --ink-soft:#1C3E52;
+    --paper:#FAFAF8;
+    --paper-2:#F0F1EC;
+    --line:#D9D6C9;
+    --gold:#A8710B;
+    --teal:#2B6F6D;
+    --text:#1C2B33;
+    --text-soft:#4B5C64;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--text-soft);
+  }
+  a{color:var(--ink);}
+  a.link{
+    color:var(--teal);
+    text-decoration:none;
+    border-bottom:1px solid rgba(43,111,109,0.35);
+    padding-bottom:1px;
+    transition:border-color .15s ease;
+  }
+  a.link:hover{border-color:var(--teal);}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 82% 18%, rgba(168,113,11,0.16), transparent 45%),
+      var(--ink);
+    color:#EFEEE8;
+    padding:96px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 88% 30%,
+        transparent 0,
+        transparent 38px,
+        rgba(239,238,232,0.05) 39px,
+        rgba(239,238,232,0.05) 40px,
+        transparent 41px,
+        transparent 78px);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;}
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:#B8CFCE;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    color:#FAFAF8;
+    font-size:clamp(2.3rem, 5vw, 3.3rem);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .hero .role{
+    font-size:1.2rem;
+    color:#DCE6E4;
+    font-weight:500;
+    margin-bottom:26px;
+  }
+  .hero p.pitch{
+    max-width:52ch;
+    color:#C6D2D1;
+    font-size:1.02rem;
+    margin-bottom:36px;
+  }
+  .hero .links{display:flex; gap:22px; flex-wrap:wrap;}
+  .hero .links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.88rem;
+    color:#EFEEE8;
+    text-decoration:none;
+    border-bottom:1px solid rgba(239,238,232,0.4);
+    padding-bottom:3px;
+    margin-right:22px;
+  }
+  .hero .links a:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0;}
+  section.alt{background:var(--paper-2);}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:28px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  .section-head .num{font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:0.9rem;}
+  .section-head h2{font-size:1.5rem;}
+
+  /* about */
+  .about-body{color:var(--text-soft); max-width:64ch; margin-bottom:34px;}
+  .skills{display:grid; grid-template-columns:1fr 1fr; gap:22px 32px;}
+  @media (max-width:560px){.skills{grid-template-columns:1fr;}}
+  .skill-group h3{font-size:0.92rem; color:var(--ink); margin-bottom:6px;}
+  .skill-group p{margin:0; color:var(--text-soft); font-size:0.94rem;}
+
+  /* project */
+  .project-meta{
+    display:flex; flex-wrap:wrap; gap:8px 20px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--text-soft);
+    margin-bottom:28px;
+  }
+  .project-meta span{white-space:nowrap; margin-right:20px; display:inline-block;}
+  .project-block{margin-bottom:30px;}
+  .project-block h3{font-size:1.02rem; margin-bottom:8px; color:var(--ink-soft);}
+  .project-block p{margin:0; color:var(--text-soft);}
+
+  .stat-row{
+    display:flex; gap:36px; flex-wrap:wrap;
+    padding:20px 0; margin:30px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{min-width:120px;}
+  .stat .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1.5rem; color:var(--gold); display:block; line-height:1;
+  }
+  .stat .label{font-size:0.82rem; color:var(--text-soft); margin-top:6px; display:block;}
+
+  /* image placeholders */
+  .gallery{display:flex; flex-wrap:wrap; gap:16px; margin:30px 0;}
+  .placeholder{
+    flex:1 1 300px;
+    aspect-ratio:4/3;
+    border:1.5px dashed #B7C4C1;
+    background:repeating-linear-gradient(135deg, rgba(43,111,109,0.04) 0 10px, transparent 10px 20px);
+    display:flex; align-items:center; justify-content:center;
+    padding:18px;
+    border-radius:2px;
+  }
+  .placeholder p{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--teal);
+    text-align:center;
+    margin:0;
+    line-height:1.5;
+  }
+  .gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:2px;
+    border:1px solid var(--line);
+    display:block;
+  }
+  .gallery figure{
+    margin:0;
+    flex:1 1 300px;
+    aspect-ratio:4/3;
+  }
+  .gallery figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    color:var(--text-soft);
+    margin-top:8px;
+  }
+
+  .repo-links{display:flex; gap:26px; flex-wrap:wrap; margin-top:8px;}
+  .repo-links a{margin-right:26px;}
+
+  /* secondary project */
+  .mini-project{padding:26px 0; border-top:1px solid var(--line);}
+  .mini-project h3{font-size:1.05rem; margin-bottom:8px;}
+  .mini-project p{color:var(--text-soft); margin:0 0 10px;}
+
+  /* footer / contact */
+  footer{
+    background:var(--ink);
+    color:#DCE6E4;
+    padding:56px 0 44px;
+  }
+  footer h2{color:#FAFAF8; font-size:1.3rem; margin-bottom:8px;}
+  footer p{color:#B8CFCE; max-width:48ch; margin-bottom:24px;}
+  .contact-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .contact-list a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.92rem;
+    color:#EFEEE8;
+    text-decoration:none;
+    border-bottom:1px solid rgba(239,238,232,0.25);
+  }
+  .contact-list a:hover{color:var(--gold); border-color:var(--gold);}
+  .foot-note{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(239,238,232,0.15);
+    font-size:0.8rem;
+    color:#7C9391;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Penang, Malaysia · 5.4141°N, 100.3288°E</div>
+    <h1>Raihanah Adawiyah Shaharuddin</h1>
+    <div class="role">Geospatial &amp; Data Analyst</div>
+    <p class="pitch">I build GIS-integrated spatial models and turn geospatial, transportation, and statistical data into decisions people can act on.</p>
+    <div class="links">
+      <a href="#project">See the project</a>
+      <a href="https://github.com/raihanahadwyh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.researchgate.net/profile/Raihanah-Shaharuddin" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://www.linkedin.com/in/raihanah-adawiyah-shaharuddin/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>About</h2>
+    </div>
+    <p class="about-body">
+      I work at the intersection of spatial analysis and applied data science — modelling how people and vehicles move through cities, and building the GIS and statistical tooling to study it. My background is in mathematics, with hands-on experience in QGIS, agent-based simulation, and Python-based spatial data pipelines. I'm currently looking for Geospatial Analyst roles where I can apply that foundation to GIS application development and system reporting.
+    </p>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>GIS &amp; Geospatial</h3>
+        <p>QGIS, spatial data analysis, GIS-integrated modelling, GAMA (agent-based GIS platform), geospatial data processing</p>
+      </div>
+      <div class="skill-group">
+        <h3>Programming &amp; Databases</h3>
+        <p>Python, C++, GAML, SQL, NoSQL</p>
+      </div>
+      <div class="skill-group">
+        <h3>Analytics &amp; Reporting</h3>
+        <p>Exploratory data analysis, statistical inference, Power BI, Databricks, technical &amp; research report writing</p>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <p>MATLAB, SPSS, Minitab, Excel, pandas, NumPy, Apache Spark</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="project">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>Featured project</h2>
+    </div>
+
+    <h3 style="font-size:1.4rem; margin-bottom:6px;">Controlling Traffic Congestion in Urbanised City Using Agent-Based Modelling</h3>
+    <div class="project-meta">
+      <span>Tools: QGIS · GAMA · Python</span>
+      <span>Type: GIS-integrated simulation</span>
+      <span>Published 2023</span>
+    </div>
+
+    <div class="project-block">
+      <h3>The problem</h3>
+      <p>Urban traffic congestion is difficult to study directly — road networks, driver behaviour, and infrastructure all interact at once. The project set out to model that interaction in a way that could be tested against different congestion-control strategies before they're applied in the real world.</p>
+    </div>
+    <div class="project-block">
+      <h3>The approach</h3>
+      <p>I built a GIS-integrated agent-based simulation framework representing road networks, traffic infrastructure, and individual vehicle movement. Traffic-related parameters and road characteristics were incorporated into the model, and vehicle interactions were simulated separately under peak and non-peak conditions to compare traffic flow behaviour.</p>
+    </div>
+    <div class="project-block">
+      <h3>The result</h3>
+      <p>The simulation outputs were analyzed to identify traffic patterns and support a data-driven understanding of urban mobility and congestion. The methodology, modelling framework, and findings were documented and published in a peer-reviewed paper.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><span class="num">~13,000</span><span class="label">traffic &amp; geospatial records</span></div>
+      <div class="stat"><span class="num">2</span><span class="label">traffic conditions modelled</span></div>
+      <div class="stat"><span class="num">2023</span><span class="label">peer-reviewed publication</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="qgis-road-network.png" alt="QGIS road network map of the study area">
+        <figcaption>Road network / study area, mapped in QGIS</figcaption>
+      </figure>
+      <figure>
+        <img src="simulation-output.png" alt="Traffic simulation output showing congestion patterns">
+        <figcaption>Simulation output — traffic density comparison</figcaption>
+      </figure>
+    </div>
+
+    <div class="repo-links">
+      <a class="link" href="https://github.com/YOUR-GITHUB-USERNAME/traffic-congestion-abm" target="_blank" rel="noopener">View code on GitHub</a>
+      <a class="link" href="https://www.mdpi.com/2220-9964/12/6/226" target="_blank" rel="noopener">Read the publication (ISPRS Int. J. Geo-Inf., 2023)</a>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>Publications</h2>
+    </div>
+    <div class="mini-project" style="border-top:none; padding-top:0;">
+      <h3>Controlling Traffic Congestion in Urbanised City: A Framework Using Agent-Based Modelling and Simulation Approach</h3>
+      <p>ISPRS International Journal of Geo-Information, 2023, 12, 226. Simulates the effect of vehicle composition and traffic light phasing on traffic flow during peak and off-peak hours in Georgetown, Penang, using GAMA.</p>
+      <a class="link" href="https://www.mdpi.com/2220-9964/12/6/226" target="_blank" rel="noopener">Read on MDPI</a>
+    </div>
+    <div class="mini-project">
+      <h3>Traffic Simulation Using Agent-Based Modelling</h3>
+      <p>2021. Earlier work developing an agent-based simulation of urban traffic around the Universiti Sains Malaysia campus area.</p>
+      <a class="link" href="https://www.researchgate.net/publication/356386014_Traffic_simulation_using_agent_based_modelling" target="_blank" rel="noopener">Read on ResearchGate</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="other-work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>Other work</h2>
+    </div>
+
+    <div class="mini-project" style="border-top:none; padding-top:0;">
+      <h3>End-to-End Sales Forecasting Using Machine Learning</h3>
+      <p>An end-to-end ML workflow on ~100,000 synthetic e-commerce transactions — data cleaning, feature engineering, and a Random Forest model to forecast sales and surface purchasing patterns.</p>
+      <a class="link" href="https://github.com/YOUR-GITHUB-USERNAME/sales-forecasting-ml" target="_blank" rel="noopener">View code on GitHub</a>
+    </div>
+
+    <div class="mini-project">
+      <h3>Semantic Ticket Routing &amp; LLM Benchmarking — The Access Group</h3>
+      <p>Built a semantic routing system that classifies and routes customer complaints through a 4-tier departmental hierarchy, and an LLM benchmarking framework comparing 4 models across 1,064+ documents for contract field extraction.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Open to Geospatial Analyst roles and GIS application development work.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:raihanahadwyh@gmail.com">raihanahadwyh@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/raihanah-adawiyah-shaharuddin/" target="_blank" rel="noopener">linkedin.com/in/raihanah-adawiyah-shaharuddin/</a></li>
+      <li><a href="https://github.com/raihanahadwyh" target="_blank" rel="noopener">github.com/raihanahadwyh</a></li>
+      <li><a href="https://www.researchgate.net/profile/Raihanah-Shaharuddin" target="_blank" rel="noopener">researchgate.net/profile/Raihanah-Shaharuddin</a></li>
+    </ul>
+    <div class="foot-note">Penang, Malaysia</div>
+  </div>
+</footer>
+
+</body>
+</html>
