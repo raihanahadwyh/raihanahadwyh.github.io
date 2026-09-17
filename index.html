@@ -182,26 +182,26 @@
     margin:0;
     line-height:1.5;
   }
-
   .gallery img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:2px;
-  border:1px solid var(--line);
-  display:block;
-}
-.gallery figure{
-  margin:0;
-  flex:1 1 300px;
-  aspect-ratio:4/3;
-}
-.gallery figcaption{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.76rem;
-  color:var(--text-soft);
-  margin-top:8px;
-}
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:2px;
+    border:1px solid var(--line);
+    display:block;
+  }
+  .gallery figure{
+    margin:0;
+    flex:1 1 300px;
+    aspect-ratio:4/3;
+  }
+  .gallery figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    color:var(--text-soft);
+    margin-top:8px;
+  }
+
   .repo-links{display:flex; gap:26px; flex-wrap:wrap; margin-top:8px;}
   .repo-links a{margin-right:26px;}
 
@@ -247,7 +247,7 @@
     <div class="links">
       <a href="#project">See the project</a>
       <a href="https://github.com/raihanahadwyh" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.researchgate.net/profile/Raihanah-Shaharuddin">ResearchGate</a>
+      <a href="https://www.researchgate.net/profile/Raihanah-Shaharuddin" target="_blank" rel="noopener">ResearchGate</a>
       <a href="https://www.linkedin.com/in/raihanah-adawiyah-shaharuddin/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
@@ -316,21 +316,16 @@
       <div class="stat"><span class="num">2023</span><span class="label">peer-reviewed publication</span></div>
     </div>
 
-    <!-- REPLACE THE TWO PLACEHOLDER BLOCKS BELOW WITH REAL SCREENSHOTS.
-         Good candidates: a QGIS road-network map, a traffic-density heatmap,
-         a before/after congestion comparison, or a screenshot of the GAMA
-         simulation running. Export from QGIS via Project > Import/Export >
-         Export Map to Image, at least 1200px wide. -->
-<div class="gallery">
-  <figure>
-    <img src="qgis-road-network.png" alt="QGIS road network map of the study area">
-    <figcaption>Road network / study area, mapped in QGIS</figcaption>
-  </figure>
-  <figure>
-    <img src="simulation-output.png" alt="Traffic simulation output showing congestion patterns">
-    <figcaption>Simulation output — traffic density comparison</figcaption>
-  </figure>
-</div>
+    <div class="gallery">
+      <figure>
+        <img src="qgis-road-network.png" alt="QGIS road network map of the study area">
+        <figcaption>Road network / study area, mapped in QGIS</figcaption>
+      </figure>
+      <figure>
+        <img src="simulation-output.png" alt="Traffic simulation output showing congestion patterns">
+        <figcaption>Simulation output — traffic density comparison</figcaption>
+      </figure>
+    </div>
 
     <div class="repo-links">
       <a class="link" href="https://github.com/YOUR-GITHUB-USERNAME/traffic-congestion-abm" target="_blank" rel="noopener">View code on GitHub</a>
